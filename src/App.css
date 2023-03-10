@@ -1,7 +1,15 @@
+
 html {
-  box-sizing: border-box;
+  
   font-size: 16px;
   
+}
+
+button{
+  border: none;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 body {
@@ -42,4 +50,11 @@ img {
   width: 1200px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.cardWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 140px);
 }

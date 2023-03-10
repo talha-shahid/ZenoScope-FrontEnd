@@ -1,29 +1,158 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Navigation.module.css';
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { logout } from "../../../http";
+// import { setAuth } from "../../../store/authSlice";
+// import styles from "./Navigation.module.css";
+// import { useDispatch, useSelector } from "react-redux";
+
+// const Navigation = () => {
+//   const dispatch = useDispatch();
+//   const { isAuth, user } = useSelector((state) => state.auth);
+
+//   const brandStyle = {
+//     color: "#fff",
+//     textDecoration: "none",
+//     fontWeight: "bold",
+//     fontSize: "22px",
+//     display: "flex",
+//     alignItems: "center",
+//   };
+
+//   const logoText = {
+//     marginLeft: "10px",
+//   };
+
+//   async function logoutUser() {
+//     try {
+//       const { data } = await logout();
+//       dispatch(setAuth(data));
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+
+//   return (
+//     <nav className={`${styles.navbar} container`}>
+//       <Link style={brandStyle} to="/">
+//         <img src="/images/logo.png" alt="logo" />
+//         <span style={logoText}>Codershouse</span>
+//       </Link>
+//       {isAuth && (
+//         <div className={styles.navRight}>
+//           <h3>{user?.name}</h3>
+//           <Link to="/">
+//             <img
+//               className={styles.avatar}
+//               src={user.avatar ? user.avatar : "/images/monkey-avatar.png"}
+//               width="40"
+//               height="40"
+//               alt="avatar"
+//             />
+//           </Link>
+// <button className={styles.logoutButton} onClick={logoutUser}>
+//   <img src="/images/logout.png" alt="logout" />
+// </button>
+//         </div>
+//       )}
+//     </nav>
+//   );
+// };
+
+// export default Navigation;
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { navVariants } from "../../../utils/motion";
+import styles from "../../../styles";
+import navStyles from "./Navigation.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../http";
+import { setAuth } from "../../../store/authSlice";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import Button from "../../../components/shared/Button/Button";
+import { FiLogOut } from "react-icons/fi";
 
 const Navigation = () => {
-    const brandStyle = {
-        color: '#fff',
-        textDecoration: 'none',
-        fontWeight: 'bold',
-        fontSize: '22px',
-        display: 'flex',
-        alignItems: 'center',
-    };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const { isAuth, user } = useSelector((state) => state.auth);
+  const [dropDown, setDropDown] = useState(false);
 
-    const logoText = {
-        marginLeft: '10px',
-    };
+  async function logoutUser() {
+    try {
+      const { data } = await logout();
+      dispatch(setAuth(data));
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-    return (
-        <nav className={`${styles.navbar} container`}>
-            <Link style={brandStyle} to="/">
-                <img src="/images/logo.png" alt="logo" />
-                <span style={logoText}>Codershouse</span>
-            </Link>
-        </nav>
-    );
+  function startRegister() {
+    navigate("/authenticate");
+  }
+
+  return (
+    <motion.nav
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show"
+      className={`${styles.xPaddings} py-8 relative `}
+    >
+      <div className="absolute w-[50%] inset-0 gradient-01" />
+
+      <div className={`${styles.innerWidth} flex flex-row justify-between`}>
+        {/* <Link to="/"> */}
+        <div className="flex items-center justify-center cursor-pointer">
+          <img
+            src="/logo3.png"
+            alt="logo"
+            className="mt-[2px] w-[24px] h-[24px] object-contain"
+          />
+          <h2 className="font-extrabold text-[24px] leading-[30px] text-white">
+            ZENOSCOPE
+          </h2>
+        </div>
+        {/* </Link> */}
+
+        {isAuth && (
+          <div
+            className="cursor-pointer relative"
+            onClick={() => setDropDown(!dropDown)}
+          >
+            <img
+              className={navStyles.avatar}
+              src={user.avatar ? user.avatar : "/images/monkey-avatar.png"}
+              width="60"
+              height="60"
+              alt="avatar"
+            />
+
+            {dropDown && (
+              <div className="absolute right-1 mt-2 bg-[#1d1d1dfd] w-[250px] h-[200px] rounded-xl p-6">
+                <h3 className="font-normal text-3xl text-center">
+                  {user?.name}
+                </h3>
+                <div className="mt-2 flex justify-center">
+                  <div className="font-bold">Ph#</div>
+                  <div>{user?.phone} </div>
+                </div>
+                <div className="mt-5">
+                  <Button onClick={logoutUser} text="Logout" />
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {!isAuth && location.pathname === "/" && (
+          <div>
+            <Button onClick={startRegister} text="Join Us" />
+          </div>
+        )}
+      </div>
+    </motion.nav>
+  );
 };
 
 export default Navigation;

@@ -14,29 +14,31 @@ const StepPhoneEmail = ({ onNext }) => {
 
   return (
     <>
-      <div className={styles.cardWrapper}>
-        <div>
-          <div className={styles.buttonWrap}>
-            <button
-              className={`${styles.tabButton} ${
-                type === "phone" ? styles.active : ""
-              }`}
-              onClick={() => setType("phone")}
-            >
-              <img src="images/phone-white.png" alt="phone" />
-            </button>
-            <button
-              className={`${styles.tabButton} ${
-                type === "email" ? styles.active : ""
-              }`}
-              onClick={() => setType("email")}
-            >
-              <img src="images/mail-white.png" alt="email" />
-            </button>
-          </div>
-          <Component onNext={onNext} />
+      {/* <div className={`${styles.cardWrapper} mt-10`}> */}
+      <div className="mt-16">
+        <div className={`${styles.buttonWrap} w-[500px] max-w-[92%] mx-auto`}>
+          {/* Phone Button */}
+          <button
+            className={`${styles.tabButton} ${
+              type === "phone" ? styles.active : ""
+            } lg:w-[60px] lg:h-[60px] w-[50px] h-[50px]`}
+            onClick={() => setType("phone")}
+          >
+            <img src="images/phone-white.png" alt="phone" />
+          </button>
+          {/* Email Button */}
+          <button
+            className={`${styles.tabButton} ${
+              type === "email" ? styles.active : ""
+            } lg:w-[60px] lg:h-[60px] w-[50px] h-[50px]`}
+            onClick={() => setType("email")}
+          >
+            <img src="images/mail-white.png" alt="email" />
+          </button>
         </div>
+        <Component onNext={onNext} />
       </div>
+      {/* </div> */}
     </>
   );
 };

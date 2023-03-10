@@ -6,9 +6,16 @@ import "./App.css";
 import Activate from "./pages/Activate/Activate";
 import Rooms from "./pages/Rooms/Rooms";
 import { useSelector } from "react-redux";
+import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
+import Loader from "./components/shared/Loader/Loader";
+import Room from "./pages/Room/Room";
+import Footer from "./components/shared/Footer/Footer";
 
 function App() {
-  return (
+  const { loading } = useLoadingWithRefresh();
+  return loading ? (
+    <Loader message="Loading, please wait..." />
+  ) : (
     <BrowserRouter>
       <Navigation />
       <Routes>
@@ -48,7 +55,17 @@ function App() {
             </ProtectedRoute>
           }
         ></Route>
+
+        <Route
+          path="/room/:id"
+          element={
+            <ProtectedRoute>
+              <Room />
+            </ProtectedRoute>
+          }
+        ></Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

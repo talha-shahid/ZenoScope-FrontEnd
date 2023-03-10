@@ -1,11 +1,7 @@
-.cardWrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 6rem;
-}
 
 .buttonWrap{
+    /* top: -60px;
+    position: absolute; */
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -13,13 +9,16 @@
 }
 
 .tabButton{
-    width: 60px;
-    height: 60px;
+    /* width: 60px;
+    height: 60px; */
     background: #262626;
     border: none;
     outline: none;
     border-radius: 10px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tabButton:last-child{
@@ -35,7 +34,8 @@
 }
 .bottomParagraph{
     color: #c4c5c5;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 20px;
+    text-align: center;
 }
