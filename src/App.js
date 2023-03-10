@@ -17,7 +17,9 @@ function App() {
     <Loader message="Loading, please wait..." />
   ) : (
     <BrowserRouter>
-      <Navigation />
+      <div className="bg-primary-black ">
+        <Navigation />
+      </div>
       <Routes>
         <Route
           path="/"

@@ -5,7 +5,7 @@ const Button = ({ text, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`${styles.button} px-[12px] md:px-[15px] lg:px-[20px] py-[7px] md:py-[8px] lg:py-[10px] text-sm md:text-base lg:text-xl`}
+      className={`${styles.button} px-[12px] md:px-[10px] py-[7px] md:py-[5px] text-sm md:text-base`}
     >
       <span>{text}</span>
       <img

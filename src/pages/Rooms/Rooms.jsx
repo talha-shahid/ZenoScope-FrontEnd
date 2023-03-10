@@ -85,7 +85,7 @@ const Rooms = () => {
   }
   return (
     <>
-      <div className="container">
+      <div className="container mb-14">
         <div className={styles.roomsHeader}>
           <div className={styles.left}>
             <span className={styles.heading}>All Voice Rooms</span>

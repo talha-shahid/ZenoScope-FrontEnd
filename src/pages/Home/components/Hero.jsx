@@ -24,10 +24,9 @@ const Hero = () => {
           <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
             <div>ZENOSCOPE</div>
           </motion.h1>
-
           <motion.div
             variants={textVariant(1.2)}
-            className={`${styles.heroBottomText} flex flex-row justify-center items-center md:-mt-4 lg:-mt-6 tracking-normal `}
+            className={`${styles.heroBottomText} flex flex-row justify-center items-center md:-mt-4 lg:-mt-6 tracking-widest text-base sm:text-lg md:text-xl lg:text-3xl`}
           >
             Online Study Companion
           </motion.div>
@@ -37,11 +36,11 @@ const Hero = () => {
           variants={slideIn("right", "twen", 0.2, 1)}
           className="relative w-full md:-mt-[20px] -mt-[12px]"
         >
-          <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] mt-5 -top-[40px] sm:-top-[45px] md:-top-[55px] lg:-top-[70px]" />
+          <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] mt-14 md:mt-[3.2rem] -top-[40px] sm:-top-[45px] md:-top-[55px] lg:-top-[70px]" />
           <img
             src="/cover.png"
             alt="cover"
-            className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative mt-3"
+            className="w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative mt-7"
           />
         </motion.div>
       </motion.div>

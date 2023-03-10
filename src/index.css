@@ -97,7 +97,7 @@
   
   .footer-gradient {
     position: absolute;
-    width: 500px;
+    /* width: 80%; */
     height: 100px;
     left: 37%;
     bottom: 0;

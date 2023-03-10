@@ -7,22 +7,21 @@ import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillTwitterSquare,
-  AiOutlineArrowRight,
 } from "react-icons/ai";
 
 const Footer = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname != "/authenticate" &&
-        location.pathname != "/activate" && (
+      {location.pathname !== "/authenticate" &&
+        location.pathname !== "/activate" && (
           <>
             <div className=" h-[2px] bg-white opacity-10 " />
             <motion.footer
               variants={footerVariants}
               initial="hidden"
               whileInView="show"
-              className={`${styles.paddings} py-8 relative `}
+              className={`${styles.paddings} py-8`}
             >
               <div className="footer-gradient" />
 

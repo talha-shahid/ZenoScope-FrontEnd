@@ -70,7 +70,6 @@ import { logout } from "../../../http";
 import { setAuth } from "../../../store/authSlice";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Button from "../../../components/shared/Button/Button";
-import { FiLogOut } from "react-icons/fi";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -97,40 +96,47 @@ const Navigation = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.xPaddings} py-8 relative `}
+      className={`${styles.xPaddings} py-3 relative`}
     >
       <div className="absolute w-[50%] inset-0 gradient-01" />
 
       <div className={`${styles.innerWidth} flex flex-row justify-between`}>
-        {/* <Link to="/"> */}
-        <div className="flex items-center justify-center cursor-pointer">
+        <div className="flex items-center justify-center z-50 cursor-pointer">
           <img
             src="/logo3.png"
             alt="logo"
-            className="mt-[2px] w-[24px] h-[24px] object-contain"
+            className="mt-[2px] w-[24px] h-[24px] object-contain "
           />
-          <h2 className="font-extrabold text-[24px] leading-[30px] text-white">
-            ZENOSCOPE
-          </h2>
+          <Link to="/" className="">
+            <h2 className="font-extrabold text-[24px] leading-[30px] text-white">
+              ZENOSCOPE
+            </h2>
+          </Link>
         </div>
-        {/* </Link> */}
 
         {isAuth && (
-          <div
+          <motiondiv
             className="cursor-pointer relative"
             onClick={() => setDropDown(!dropDown)}
           >
-            <img
+            <motion.img
+              // initial={{ scale: 1 }}
+              animate={{ scale: 1.2 }}
+              transition={{ type: "tween", duration: 1.3 }}
               className={navStyles.avatar}
               src={user.avatar ? user.avatar : "/images/monkey-avatar.png"}
-              width="60"
-              height="60"
+              width="40"
+              height="40"
               alt="avatar"
             />
 
             {dropDown && (
-              <div className="absolute right-1 mt-2 bg-[#1d1d1dfd] w-[250px] h-[200px] rounded-xl p-6">
-                <h3 className="font-normal text-3xl text-center">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                className="absolute right-1 mt-1 bg-[#1d1d1dfd] w-[200px] h-[180px] rounded-xl p-6"
+              >
+                <h3 className="font-normal text-xl text-center">
                   {user?.name}
                 </h3>
                 <div className="mt-2 flex justify-center">
@@ -140,9 +146,9 @@ const Navigation = () => {
                 <div className="mt-5">
                   <Button onClick={logoutUser} text="Logout" />
                 </div>
-              </div>
+              </motion.div>
             )}
-          </div>
+          </motiondiv>
         )}
 
         {!isAuth && location.pathname === "/" && (

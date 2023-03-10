@@ -71,11 +71,11 @@ function Home() {
           <div className="gradient-04 z-0" />
           <Imagine />
         </div>
-        <World />
+        {/* <World /> */}
         <div className="relative">
-          <Insights />
+          {/* <Insights /> */}
           <div className="gradient-04 z-0" />
-          <Feedback />
+          {/* <Feedback /> */}
         </div>
       </div>
     </>

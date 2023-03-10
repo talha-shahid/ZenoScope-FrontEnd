@@ -31,7 +31,7 @@ const Imagine = () => {
             title="Imagine a future with better people"
             textStyles="text-center"
           />
-          <div className="mt-[48px] flex flex-row justify-between  max-w-[370px] gap-[40px]">
+          <div className="mt-[48px] flex flex-col md:flex-row justify-between  max-w-[370px] gap-[40px]">
             {justImagine.map((feature) => (
               <JustImagine key={feature.title} {...feature} />
             ))}
