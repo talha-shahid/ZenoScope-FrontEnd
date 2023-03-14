@@ -1,31 +1,24 @@
-import GiWorld from "react-icons/gi";
-
 export const exploreWorlds = [
   {
-    id: "world-1",
+    id: "chemistry",
     imgUrl: "/planet-01.png",
     title: "Chemistry",
   },
   {
-    id: "world-2",
+    id: "data-structures",
     imgUrl: "/planet-02.png",
     title: "Data Structures",
   },
   {
-    id: "world-3",
+    id: "algorithms",
     imgUrl: "/planet-03.png",
     title: "Algorithms",
   },
   {
-    id: "world-4",
+    id: "physics",
     imgUrl: "/planet-05.png",
     title: "Physics",
   },
-  // {
-  //   id: "world-5",
-  //   imgUrl: "/planet-05.png",
-  //   title: "Other",
-  // },
 ];
 
 export const ourRecipe = [

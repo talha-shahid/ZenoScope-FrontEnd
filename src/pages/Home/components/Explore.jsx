@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
 import styles from "../../../styles";
 import { exploreWorlds } from "../../../constants";
 import { staggerContainer } from "../../../utils/motion";
@@ -8,7 +7,7 @@ import { TitleText, TypingText } from "./secondary/CustomTexts";
 import ExploreCard from "./secondary/ExploreCard";
 
 const Explore = () => {
-  const [active, setActive] = useState("world-2");
+  const [active, setActive] = useState("data-structures");
 
   return (
     <section className={`${styles.paddings}`} id="explore">

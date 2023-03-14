@@ -17,12 +17,20 @@ const StepName = ({ onNext }) => {
     dispatch(setName(fullName));
     onNext();
   }
+
+  const handler = (event) => {
+    if (event.key === "Enter") {
+      nextStep();
+    }
+  };
+
   return (
     <>
-      <Card title="What's your full name?" icon="goggle-emoji">
+      <Card title="What's your full name?" icon="name">
         <TextInput
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
+          onKeyDown={(e) => handler(e)}
         />
         <p className={styles.paragraph}>People use real names at CodersHouse</p>
         <div className={styles.actionButtonWrap}>

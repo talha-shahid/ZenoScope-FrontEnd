@@ -23,11 +23,21 @@ const StepOtp = () => {
     }
   }
 
+  const handler = (event) => {
+    if (event.key === "Enter") {
+      submit();
+    }
+  };
+
   return (
     <>
       <div className={styles.cardWrapper}>
-        <Card title="Enter the code we just texted you" icon="lock-emoji">
-          <TextInput value={otp} onChange={(e) => setOtp(e.target.value)} />
+        <Card title="Enter the code we just texted you" icon="otp">
+          <TextInput
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+            onKeyDown={(e) => handler(e)}
+          />
           <div className={styles.actionButtonWrap}>
             <Button onClick={submit} text="Next" />
           </div>

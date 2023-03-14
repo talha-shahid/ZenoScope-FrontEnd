@@ -19,11 +19,18 @@ const Phone = ({ onNext }) => {
     onNext();
   }
 
+  const handler = (event) => {
+    if (event.key === "Enter") {
+      submit();
+    }
+  };
+
   return (
     <Card title="Enter your Phone Number" icon="phone">
       <TextInput
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
+        onKeyDown={(e) => handler(e)}
       />
       <div className={styles.actionButtonWrap}>
         <Button text="Next" onClick={submit} />

@@ -2,13 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { slideIn, staggerContainer, textVariant } from "../../../utils/motion";
 import styles from "../../../styles";
-import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
-  const navigate = useNavigate();
-  function startRegister() {
-    navigate("/authenticate");
-  }
   return (
     <section
       className={`${styles.yPaddings} sm:pl-16 pl-6 h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden`}

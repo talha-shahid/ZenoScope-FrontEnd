@@ -44,11 +44,8 @@
 import "../../App.css";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Feedback from "./components/Feedback";
-import Insights from "./components/Insights";
 import OurRecipe from "./components/OurRecipe";
 import Explore from "./components/Explore";
-import World from "./components/World";
 import Imagine from "./components/Imagine";
 
 function Home() {
@@ -58,7 +55,7 @@ function Home() {
   //   }
   return (
     <>
-      <div className="bg-primary-black overflow-hidden">
+      <div className="overflow-hidden">
         {/* <Navbar /> */}
         <Hero />
         <div className="relative">

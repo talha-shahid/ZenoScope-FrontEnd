@@ -8,7 +8,7 @@ const Email = ({ onNext }) => {
   const [email, setEmail] = useState("");
 
   return (
-    <Card title="Enter your Email" icon="email-emoji">
+    <Card title="Enter your Email" icon="email">
       <TextInput value={email} onChange={(e) => setEmail(e.target.value)} />
       <div className={styles.actionButtonWrap}>
         <Button text="Next" onClick={onNext} />

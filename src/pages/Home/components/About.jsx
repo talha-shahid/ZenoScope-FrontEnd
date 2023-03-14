@@ -19,7 +19,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn("up", "tween", 0.2, 1)}
-          className="mt-[50px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white"
+          className="font-normal sm:text-[32px] text-[20px] text-center text-secondary-white p-4 md:p-8"
         >
           <span className="font-extrabold ">Zenoscope</span> offers an efficient
           and modernized approach to traditional learning by replacing outdated

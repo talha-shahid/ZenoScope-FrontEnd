@@ -1,9 +1,6 @@
 import React from "react";
-import { useState } from "react";
 import { motion } from "framer-motion";
-
 import styles from "../../../styles";
-import { exploreWorlds } from "../../../constants";
 import {
   staggerContainer,
   fadeIn,

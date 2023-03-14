@@ -1,7 +1,5 @@
 
 .buttonWrap{
-    /* top: -60px;
-    position: absolute; */
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -9,8 +7,6 @@
 }
 
 .tabButton{
-    /* width: 60px;
-    height: 60px; */
     background: #262626;
     border: none;
     outline: none;

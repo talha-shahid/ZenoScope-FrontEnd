@@ -32,8 +32,9 @@ const StepAvatar = ({ onNext }) => {
       const { data } = await activate({ name, avatar });
       if (data.auth) {
         //check if component is unmounted
-        if (!unMounted) return;
-        dispatch(setAuth(data));
+        if (!unMounted) {
+          dispatch(setAuth(data));
+        }
       }
       console.log(data);
     } catch (err) {
@@ -54,7 +55,7 @@ const StepAvatar = ({ onNext }) => {
   }
   return (
     <>
-      <Card title={`Okay, ${name}`} icon="monkey-emoji">
+      <Card title={`Okay, ${name}`} icon="photo">
         <p className={styles.subHeading}>How's this photo?</p>
         <div className={styles.avatarWrapper}>
           <img className={styles.avatarImage} src={image} alt="avatar" />

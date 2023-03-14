@@ -10,6 +10,8 @@ import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
 import Loader from "./components/shared/Loader/Loader";
 import Room from "./pages/Room/Room";
 import Footer from "./components/shared/Footer/Footer";
+import Simulations from "./pages/Simulations/Simulations";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -29,6 +31,26 @@ function App() {
             </GuestRoute>
           }
           exact
+        ></Route>
+
+        <Route path="*" element={<PageNotFound />} />
+
+        {/* <Route
+          path="/simulations"
+          element={
+            <GuestRoute>
+              <Simulations />
+            </GuestRoute>
+          }
+        ></Route> */}
+
+        <Route
+          path="/simulations/:id"
+          element={
+            // <GuestRoute>
+            <Simulations />
+            // </GuestRoute>
+          }
         ></Route>
 
         <Route

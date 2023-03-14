@@ -14,7 +14,6 @@ const StepPhoneEmail = ({ onNext }) => {
 
   return (
     <>
-      {/* <div className={`${styles.cardWrapper} mt-10`}> */}
       <div className="mt-16">
         <div className={`${styles.buttonWrap} w-[500px] max-w-[92%] mx-auto`}>
           {/* Phone Button */}
@@ -38,7 +37,6 @@ const StepPhoneEmail = ({ onNext }) => {
         </div>
         <Component onNext={onNext} />
       </div>
-      {/* </div> */}
     </>
   );
 };
