@@ -6,11 +6,14 @@ import {
   dataStructuresData,
   physicsData,
 } from "../../constants/simulationsData";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../utils/motion";
 
 const Simulations = () => {
   const { id: simulation } = useParams();
   const [name, setName] = useState("");
   const [data, setData] = useState();
+  const [showDetails, setShowDetails] = useState(false);
   console.log(simulation);
   console.log(data);
 
@@ -52,27 +55,42 @@ const Simulations = () => {
           role="list"
           className="grid grid-cols-1 gap-x-4 gap-y-8 lg:gap-x-10 lg:grid-cols-2 mx-2 lg:mx-16"
         >
-          {data?.map((file) => (
-            <li key={file.source} className="relative">
-              <div className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+          {data?.map((component) => (
+            <li
+              key={component.title}
+              className="relative hover:cursor-pointer"
+              onMouseOver={() => setShowDetails(true)}
+              onMouseOut={() => setShowDetails(false)}
+            >
+              <div className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 ">
                 <img
-                  src={file.source}
+                  src={component.source}
                   alt=""
-                  className="pointer-events-none object-cover group-hover:opacity-75"
+                  className="pointer-events-none object-cover group-hover:opacity-80"
                 />
-                <button
-                  type="button"
-                  className="absolute inset-0 focus:outline-none"
-                >
-                  <span className="sr-only">View details for {file.title}</span>
-                </button>
+
+                {showDetails && (
+                  <div className="absolute mt-auto bottom-0 p-3 flex justify-start h-1/2 w-full flex-col bg-[rgba(0,0,0,0.82)]">
+                    <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white text-center">
+                      {component.title}
+                    </h2>
+
+                    <motion.div
+                      variants={staggerContainer}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{ once: false, amount: 0.25 }}
+                    >
+                      <motion.p
+                        variants={fadeIn("up", "tween", 0.2, 0.6)}
+                        className="font-thin sm:text-[20px] text-[16px] text-center text-secondary-white mt-3"
+                      >
+                        {component.abstract}
+                      </motion.p>
+                    </motion.div>
+                  </div>
+                )}
               </div>
-              <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
-                {file.title}
-              </p>
-              <p className="pointer-events-none block text-sm font-medium text-gray-500">
-                {file.size}
-              </p>
             </li>
           ))}
         </ul>
