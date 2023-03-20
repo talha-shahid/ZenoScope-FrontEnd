@@ -6,12 +6,12 @@ export const exploreWorlds = [
   },
   {
     id: "data-structures",
-    imgUrl: "/planet-02.png",
+    imgUrl: "/DataTree.png",
     title: "Data Structures",
   },
   {
     id: "algorithms",
-    imgUrl: "/planet-03.png",
+    imgUrl: "/Algorithms.png",
     title: "Algorithms",
   },
   {

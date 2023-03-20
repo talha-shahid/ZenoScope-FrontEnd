@@ -5,7 +5,7 @@ import {
   algorithmsData,
   dataStructuresData,
   physicsData,
-} from "../../constants/simulationsData";
+} from "./simulationsData";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "../../utils/motion";
 

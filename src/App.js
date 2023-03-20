@@ -4,14 +4,17 @@ import Navigation from "./components/shared/Navigation/Navigation";
 import Authenticate from "./pages/Authentication/Authenticate";
 import "./App.css";
 import Activate from "./pages/Activate/Activate";
-import Rooms from "./pages/Rooms/Rooms";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import { useSelector } from "react-redux";
 import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
 import Loader from "./components/shared/Loader/Loader";
+import Rooms from "./pages/Rooms/Rooms";
 import Room from "./pages/Room/Room";
+import Profile from "./pages/Profile/Profile";
 import Footer from "./components/shared/Footer/Footer";
 import Simulations from "./pages/Simulations/Simulations";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
+import SimulationsHome from "./pages/Simulations/SimulationsHome";
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -34,24 +37,8 @@ function App() {
         ></Route>
 
         <Route path="*" element={<PageNotFound />} />
-
-        {/* <Route
-          path="/simulations"
-          element={
-            <GuestRoute>
-              <Simulations />
-            </GuestRoute>
-          }
-        ></Route> */}
-
-        <Route
-          path="/simulations/:id"
-          element={
-            // <GuestRoute>
-            <Simulations />
-            // </GuestRoute>
-          }
-        ></Route>
+        <Route path="/simulations" element={<SimulationsHome />} exact></Route>
+        <Route path="/simulations/:id" element={<Simulations />}></Route>
 
         <Route
           path="/authenticate"
@@ -72,6 +59,15 @@ function App() {
         ></Route>
 
         <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
           path="/rooms"
           element={
             <ProtectedRoute>
@@ -81,13 +77,22 @@ function App() {
         ></Route>
 
         <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        {/* <Route
           path="/room/:id"
           element={
             <ProtectedRoute>
               <Room />
             </ProtectedRoute>
           }
-        ></Route>
+        ></Route> */}
       </Routes>
       <Footer />
     </BrowserRouter>
@@ -95,17 +100,17 @@ function App() {
 }
 //------------------------------------------------
 //Guest Route
-// - if user is authenticated, redirect to /rooms
+// - if user is authenticated, redirect to /dashboard
 // - else, render the <Home /> component
 const GuestRoute = ({ children }) => {
   const { isAuth } = useSelector((state) => state.auth);
-  return isAuth ? <Navigate to="/rooms" /> : children;
+  return isAuth ? <Navigate to="/dashboard" /> : children;
 };
 
 //Semi Protected Route
 // - if user is not authenticated, redirect to /
 // - else if user is authenticated not activated, render the <Activate /> component
-// - else if(meaning user is both authenticated and activated), redirect to /rooms
+// - else if(meaning user is both authenticated and activated), redirect to /dashboard
 const SemiProtectedRoute = ({ children }) => {
   const { isAuth, user } = useSelector((state) => state.auth);
   if (!isAuth) {
@@ -114,7 +119,7 @@ const SemiProtectedRoute = ({ children }) => {
     if (!user.activated) {
       return children;
     } else {
-      return <Navigate to="/rooms" />;
+      return <Navigate to="/dashboard" />;
     }
   }
 };

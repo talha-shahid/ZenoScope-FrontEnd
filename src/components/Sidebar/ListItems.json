@@ -1,0 +1,18 @@
+[
+  {
+    "link": "/dashboard",
+    "title": "Dashboard"
+  },
+  {
+    "link": "/rooms",
+    "title": "Rooms"
+  },
+  {
+    "link": "/simulations",
+    "title": "Simulations"
+  },
+  {
+    "link": "/profile",
+    "title": "Profile"
+  }
+]
