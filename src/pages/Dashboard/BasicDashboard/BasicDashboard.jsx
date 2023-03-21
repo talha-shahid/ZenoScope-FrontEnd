@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { textVariant2 } from "../../../utils/motion";
 import { motion } from "framer-motion";
+import Alert from "../../../components/Alert/Alert";
 
 const BasicDashboard = () => {
   const { user } = useSelector((state) => state.auth);
@@ -51,20 +52,24 @@ const BasicDashboard = () => {
       />
       <div className="flex overflow-hidden">
         {onDesktop && <Sidebar />}
-        <div className="w-[50%] flex justify-center">
+        <div className="w-[100%] md:w-[50%] ">
           <motion.h2
             variants={textVariant2}
             initial="hidden"
             whileInView="show"
             className={`mt-[8px] md:text-[30px] text-[20px] text-white`}
           >
-            <div className="font-normal">Welcome, </div>
+            <div className="font-normal text-center">Welcome, </div>
             <div className="text-center md:text-[50px] text-[40px] tracking-wider font-bold">
               {user.name}
             </div>
           </motion.h2>
+
+          <div className="m-10">
+            <Alert />
+          </div>
         </div>
-        <div className="w-[50%] h-[50%] object-cover flex justify-center">
+        <div className="w-[50%] h-[50%] object-cover hidden md:flex justify-center ">
           <img src="/Pencil.png" alt="pencil" />
         </div>
       </div>

@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 
 export default function ListItem({ link, title }) {
   const [icon, setIcon] = useState();
+
   function handleIcon() {
     switch (title) {
       case "Dashboard":
@@ -19,6 +20,9 @@ export default function ListItem({ link, title }) {
         break;
       case "Profile":
         setIcon(<CgProfile size={30} />);
+        break;
+      case "Users":
+        setIcon(<IoIosPeople size={30} />);
         break;
     }
   }

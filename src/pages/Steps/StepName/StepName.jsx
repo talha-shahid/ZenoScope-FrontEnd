@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "../../../components/shared/Button/Button";
-import Card from "../../../components/shared/Card/Card";
-import TextInput from "../../../components/shared/TextInput/TextInput";
+import Button from "../../../components/Button/Button";
+import Card from "../../../components/Card/Card";
+import TextInput from "../../../components/TextInput/TextInput";
 import { useDispatch, useSelector } from "react-redux";
 import { setName } from "../../../store/activateSlice";
 import styles from "./StepName.module.css";

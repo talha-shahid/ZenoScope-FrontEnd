@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { navVariants } from "../../../utils/motion";
-import styles from "../../../styles";
+import { navVariants } from "../../utils/motion";
+import styles from "../../styles";
 import navStyles from "./Navigation.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../../http";
-import { setAuth } from "../../../store/authSlice";
+import { logout } from "../../http";
+import { setAuth } from "../../store/authSlice";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import Button from "../../../components/shared/Button/Button";
+import Button from "../../components/Button/Button";
 
 const Navigation = () => {
   const navigate = useNavigate();

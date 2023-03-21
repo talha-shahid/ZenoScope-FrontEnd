@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Card from "../../../components/shared/Card/Card";
-import TextInput from "../../../components/shared/TextInput/TextInput";
-import Button from "../../../components/shared/Button/Button";
+import Card from "../../../components/Card/Card";
+import TextInput from "../../../components/TextInput/TextInput";
+import Button from "../../../components/Button/Button";
 import styles from "./StepOtp.module.css";
 import { verifyOtp } from "../../../http";
 import { useSelector } from "react-redux";

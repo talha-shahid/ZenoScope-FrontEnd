@@ -22,6 +22,8 @@ export const createRoom = (data) => api.post("/api/rooms", data);
 
 export const getAllRooms = () => api.get("/api/rooms");
 
+export const getAllUsers = (data) => api.post("/api/users", data);
+
 //Interceptors
 api.interceptors.response.use(
   (config) => {

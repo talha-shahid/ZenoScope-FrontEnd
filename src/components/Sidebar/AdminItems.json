@@ -2,5 +2,9 @@
   {
     "link": "/dashboard",
     "title": "Dashboard"
+  },
+  {
+    "link": "/users",
+    "title": "Users"
   }
 ]

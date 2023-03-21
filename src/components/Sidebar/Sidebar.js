@@ -6,6 +6,7 @@ import AdminItems from "./AdminItems.json";
 
 const Sidebar = () => {
   const { user } = useSelector((state) => state.auth);
+
   return (
     <div className={`z-40 w-56 h-screen px-2 overflow-y-auto bg-gray-800`}>
       <div className="py-4 overflow-y-auto">

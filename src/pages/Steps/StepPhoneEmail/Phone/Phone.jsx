@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Card from "../../../../components/shared/Card/Card";
-import Button from "../../../../components/shared/Button/Button";
-import TextInput from "../../../../components/shared/TextInput/TextInput";
+import Card from "../../../../components/Card/Card";
+import Button from "../../../../components/Button/Button";
+import TextInput from "../../../../components/TextInput/TextInput";
 import styles from "../StepPhoneEmail.module.css";
 import { sendOtp } from "../../../../http/index";
 import { useDispatch } from "react-redux";

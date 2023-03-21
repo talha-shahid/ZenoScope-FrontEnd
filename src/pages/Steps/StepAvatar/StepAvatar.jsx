@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../../components/shared/Button/Button";
-import Card from "../../../components/shared/Card/Card";
+import Button from "../../../components/Button/Button";
+import Card from "../../../components/Card/Card";
 import styles from "./StepAvatar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setAvatar } from "../../../store/activateSlice";
 import { activate } from "../../../http";
 import { setAuth } from "../../../store/authSlice";
-import Loader from "../../../components/shared/Loader/Loader";
+import Loader from "../../../components/Loader/Loader";
 
 const StepAvatar = ({ onNext }) => {
   const dispatch = useDispatch();

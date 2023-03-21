@@ -31,7 +31,9 @@ const AdminDashboard = () => {
         closeButton={false}
       />
 
-      <div className="flex overflow-hidden">{onDesktop && <Sidebar />}</div>
+      <div className="flex overflow-hidden">
+        {onDesktop && <Sidebar />} Admin
+      </div>
     </>
   );
 };

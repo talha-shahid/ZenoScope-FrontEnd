@@ -1,20 +1,20 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Navigation from "./components/shared/Navigation/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import Authenticate from "./pages/Authentication/Authenticate";
 import "./App.css";
 import Activate from "./pages/Activate/Activate";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { useSelector } from "react-redux";
 import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
-import Loader from "./components/shared/Loader/Loader";
+import Loader from "./components/Loader/Loader";
 import Rooms from "./pages/Rooms/Rooms";
-import Room from "./pages/Room/Room";
 import Profile from "./pages/Profile/Profile";
-import Footer from "./components/shared/Footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Simulations from "./pages/Simulations/Simulations";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SimulationsHome from "./pages/Simulations/SimulationsHome";
+import Users from "./pages/Users/Users";
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -81,6 +81,15 @@ function App() {
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/users"
+          element={
+            <ProtectedRoute>
+              <Users />
             </ProtectedRoute>
           }
         ></Route>
