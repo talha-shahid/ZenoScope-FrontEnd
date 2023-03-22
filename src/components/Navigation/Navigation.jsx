@@ -53,25 +53,21 @@ const Navigation = () => {
         </div>
 
         {isAuth && (
-          <motion.div
-            className="cursor-pointer relative"
+          <div
+            className="cursor-pointer h-[60px] w-[60px] border-[3px] border-blue-600 overflow-hidden rounded-full"
             onClick={() => setDropDown(!dropDown)}
           >
-            <motion.img
-              animate={{ scale: 1.2 }}
-              transition={{ type: "tween", duration: 1.3 }}
-              className={navStyles.avatar}
+            <img
+              className="inline-block object-cover"
               src={user.avatar ? user.avatar : "/images/monkey-avatar.png"}
-              width="40"
-              height="40"
               alt="avatar"
             />
 
             {dropDown && (
-              <motion.div
+              <div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                className="absolute right-1 mt-1 bg-[#1d1d1dfd] w-[200px] h-[180px] rounded-xl p-6"
+                className="absolute right-4 bg-[#1d1d1dfd] w-[200px] h-[180px] rounded-xl p-6"
               >
                 <h3 className="font-normal text-xl text-center">
                   {user?.name}
@@ -83,9 +79,9 @@ const Navigation = () => {
                 <div className="mt-5">
                   <Button onClick={logoutUser} text="Logout" />
                 </div>
-              </motion.div>
+              </div>
             )}
-          </motion.div>
+          </div>
         )}
 
         {!isAuth && location.pathname === "/" && (

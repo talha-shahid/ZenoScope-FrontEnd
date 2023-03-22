@@ -20,12 +20,14 @@ export const algorithmsData = [
     abstract:
       "Explore Sorting Algorithms visually and compare their performance.",
     source: "/images/sorting.jpg",
+    link: "/simulations/algorithms/sorting",
   },
   {
     title: "Pathfinding Algorithms",
     abstract:
       "Sit back and watch how different pathfinding algorithms works by seeing them wander around the maze.",
     source: "/images/pathfinding.png",
+    link: "/simulations/algorithms",
   },
 ];
 

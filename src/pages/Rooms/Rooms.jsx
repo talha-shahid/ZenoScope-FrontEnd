@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AddRoomModal from "../../components/AddRoomModal/AddRoomModal";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import RoomCard from "../../components/RoomCard/RoomCard";
 import { getAllRooms } from "../../http";
 import styles from "./Rooms.module.css";
@@ -85,7 +86,8 @@ const Rooms = () => {
   }
   return (
     <>
-      <div className="container mb-14">
+      <BreadCrumbs name={"Rooms"} />
+      <div className="mx-16 mb-14">
         <div className={styles.roomsHeader}>
           <div className={styles.left}>
             <span className={styles.heading}>All Voice Rooms</span>

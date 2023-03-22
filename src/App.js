@@ -15,6 +15,7 @@ import Simulations from "./pages/Simulations/Simulations";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SimulationsHome from "./pages/Simulations/SimulationsHome";
 import Users from "./pages/Users/Users";
+import SortingVisualizer from "./pages/Simulations/Algorithms/Sorting/SortingVisualizer";
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -39,6 +40,10 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
         <Route path="/simulations" element={<SimulationsHome />} exact></Route>
         <Route path="/simulations/:id" element={<Simulations />}></Route>
+        <Route
+          path="/simulations/algorithms/sorting"
+          element={<SortingVisualizer />}
+        ></Route>
 
         <Route
           path="/authenticate"
