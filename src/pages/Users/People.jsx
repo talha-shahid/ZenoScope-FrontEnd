@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { getAllUsers } from "../../http";
 
-export default function People() {
+export default function People({ search }) {
   const [people, setPeople] = useState();
   const { user } = useSelector((state) => state.auth);
+  console.log(`in people ${search}`);
 
   async function adminRequest(user) {
-    console.log(user);
     try {
-      const { data } = await getAllUsers({ user });
+      const { data } = await getAllUsers({ user }, search);
+      console.log(data);
       setPeople(data);
     } catch (error) {
       console.log(error.message);
@@ -20,7 +21,7 @@ export default function People() {
 
   useEffect(() => {
     adminRequest(user);
-  }, []);
+  }, [search]);
 
   return (
     <ul

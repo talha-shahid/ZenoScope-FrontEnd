@@ -11,7 +11,7 @@ const pages = [
 export default function BreadCrumbs({ name }) {
   const location = useLocation();
   return (
-    <nav className="flex ml-16" aria-label="Breadcrumb">
+    <nav className="flex md:ml-16 ml-9" aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>

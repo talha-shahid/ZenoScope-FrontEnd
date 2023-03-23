@@ -5,6 +5,7 @@ const TextInput = (props) => {
   return (
     <div>
       <input
+        placeholder="Search"
         className={styles.input}
         style={{ width: props.fullwidth === "true" ? "100%" : "inherit" }}
         type="text"
