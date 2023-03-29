@@ -22,17 +22,7 @@ const SideBar = () => {
   //Handle Range
   const handleRange = (range) => {
     setValue(range);
-    // let new_arr = [...myState.values];
-    // console.log(new_arr);
-    //   for (let i = 0; i < new_arr.length; i++)
-    //     document.getElementById(i).style.transform = `translateX(${i * 11}px)`;
-
-    //   resetColor();
-
     dispatch(updateRange(range));
-    // dispatch({
-    //   type: "CHANGE_VALUES",
-    // });
   };
 
   //Handle Color
@@ -79,17 +69,19 @@ const SideBar = () => {
         </select>
       </div>
 
-      <div className="sidebar__option ">
-        <label htmlFor="range">Range: </label>
-        <input
-          id="slider"
-          type="range"
-          value={value}
-          className="w-[180px] h-1 rounded-lg appearance-none cursor-pointer bg-gray-700"
-          onChange={(e) => handleRange(e.target.value)}
-          disabled={myState.play ? true : false}
-        />
-      </div>
+      {!(window.innerWidth <= 768) && (
+        <div className="sidebar__option ">
+          <label htmlFor="range">Range: </label>
+          <input
+            id="slider"
+            type="range"
+            value={value}
+            className="w-[180px] h-1 rounded-lg appearance-none cursor-pointer bg-gray-700"
+            onChange={(e) => handleRange(e.target.value)}
+            disabled={myState.play ? true : false}
+          />
+        </div>
+      )}
 
       <div className="sidebar__option">
         <label htmlFor="color">Color: </label>

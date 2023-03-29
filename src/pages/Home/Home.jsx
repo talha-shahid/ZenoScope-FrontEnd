@@ -9,7 +9,6 @@ function Home() {
   return (
     <>
       <div className="overflow-hidden">
-        {/* <Navbar /> */}
         <Hero />
         <div className="relative">
           <About />
@@ -21,11 +20,8 @@ function Home() {
           <div className="gradient-04 z-0" />
           <Imagine />
         </div>
-        {/* <World /> */}
         <div className="relative">
-          {/* <Insights /> */}
           <div className="gradient-04 z-0" />
-          {/* <Feedback /> */}
         </div>
       </div>
     </>

@@ -22,6 +22,7 @@
     font-size: 0.9rem;
     outline: none;
     background-color: transparent;
+    cursor: pointer;
   }
   
   .MuiSlider-track {
@@ -34,7 +35,7 @@
     justify-content: center;
   }
   
-  @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     .sidebar {
       width: 200px;
     }
@@ -52,8 +53,8 @@
     }
   }
   
-  @media only screen and (max-width: 600px) {
-    .sidebar {
+@media only screen and (max-width: 600px) {
+     .sidebar {
       height: 40px;
       width: 100%;
       display: flex;
@@ -64,7 +65,7 @@
   
     .slider {
       max-width: 50px;
-    }
+    } 
     .sidebar__option {
       padding: 10px;
       margin-bottom: 10px;
@@ -72,9 +73,7 @@
       align-items: center;
       justify-content: center;
       margin: 2px;
-      max-width: 72px;
-      margin-right: -2px;
-      border-bottom: none;
+
     }
   
     select {
@@ -86,5 +85,4 @@
       font-size: 0.9rem;
       display: none;
     }
-  }
-  
+  } 
