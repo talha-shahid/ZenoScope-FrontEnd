@@ -6,5 +6,9 @@
   {
     "link": "/users",
     "title": "Users"
+  },
+  {
+    "link": "/simulations",
+    "title": "Simulations"
   }
 ]

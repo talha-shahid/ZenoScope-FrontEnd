@@ -8,7 +8,6 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import { useSelector } from "react-redux";
 import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
 import Loader from "./components/Loader/Loader";
-import Rooms from "./pages/Rooms/Rooms";
 import Profile from "./pages/Profile/Profile";
 import Footer from "./components/Footer/Footer";
 import Simulations from "./pages/Simulations/Simulations";
@@ -73,15 +72,6 @@ function App() {
         ></Route>
 
         <Route
-          path="/rooms"
-          element={
-            <ProtectedRoute>
-              <Rooms />
-            </ProtectedRoute>
-          }
-        ></Route>
-
-        <Route
           path="/profile"
           element={
             <ProtectedRoute>
@@ -99,14 +89,6 @@ function App() {
           }
         ></Route>
 
-        {/* <Route
-          path="/room/:id"
-          element={
-            <ProtectedRoute>
-              <Room />
-            </ProtectedRoute>
-          }
-        ></Route> */}
       </Routes>
       <Footer />
     </BrowserRouter>

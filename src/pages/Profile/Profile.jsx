@@ -1,4 +1,4 @@
-// import { PaperClipIcon } from '@heroicons/react/20/solid'
+
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import { useSelector } from "react-redux";
 
@@ -20,25 +20,25 @@ export default function Profile() {
         <div className="border-t border-gray-700 px-4 py-5 sm:p-0">
           <dl className="sm:divide-y sm:divide-gray-900">
             <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Full name</dt>
+              <dt className="text-sm font-medium text-gray-400">Full name</dt>
               <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
                 {user.name}
               </dd>
             </div>
             <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Phone #</dt>
+              <dt className="text-sm font-medium text-gray-400">Phone #</dt>
               <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
                 {user.phone}
               </dd>
             </div>
             <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">User ID</dt>
+              <dt className="text-sm font-medium text-gray-400">User ID</dt>
               <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
                 {user._id}
               </dd>
             </div>
             <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500">Activated</dt>
+              <dt className="text-sm font-medium text-gray-400">Activated</dt>
               <dd className="mt-1 text-sm text-white sm:col-span-2 sm:mt-0">
                 {`${user.activated}`}
               </dd>

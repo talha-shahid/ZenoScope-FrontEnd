@@ -13,10 +13,10 @@ const Sidebar = () => {
         <ul className="space-y-2">
           {user.phone === "+923024042683"
             ? AdminItems.map((adminItem) => (
-                <ListItem link={adminItem.link} title={adminItem.title} />
+                <ListItem link={adminItem.link} title={adminItem.title} key={adminItem.title}/>
               ))
             : LinkItems.map((linkItem) => (
-                <ListItem link={linkItem.link} title={linkItem.title} />
+                <ListItem link={linkItem.link} title={linkItem.title} key={linkItem.title}/>
               ))}
         </ul>
       </div>

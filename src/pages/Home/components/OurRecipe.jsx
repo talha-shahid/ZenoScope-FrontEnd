@@ -42,7 +42,7 @@ const OurRecipe = () => {
           />
           <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
             {ourRecipe.map((feature, index) => (
-              <StartSteps key={feature.id} number={index + 1} text={feature} />
+              <StartSteps key={index} number={index + 1} text={feature} />
             ))}
           </div>
         </motion.div>

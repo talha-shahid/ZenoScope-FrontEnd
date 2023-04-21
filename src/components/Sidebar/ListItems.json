@@ -4,10 +4,6 @@
     "title": "Dashboard"
   },
   {
-    "link": "/rooms",
-    "title": "Rooms"
-  },
-  {
     "link": "/simulations",
     "title": "Simulations"
   },
