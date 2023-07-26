@@ -33,7 +33,7 @@ const Navigation = () => {
       <div className={`${styles.innerWidth} flex flex-row justify-between`}>
         <div className="flex items-center justify-center z-50 cursor-pointer">
           <img
-            src="/logo3.png"
+            src="/logo.png"
             alt="logo"
             className="mt-[2px] w-[24px] h-[24px] object-contain "
           />

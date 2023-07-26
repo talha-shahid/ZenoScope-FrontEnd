@@ -25,7 +25,7 @@ const Footer = () => {
                   <div className="flex items-center justify-between flex-wrap gap-4">
                     <div className="flex">
                       <img
-                        src="/logo3.png"
+                        src="/logo.png"
                         alt="logo"
                         className="mt-[5px] w-[24px] h-[24px] object-contain"
                       />
