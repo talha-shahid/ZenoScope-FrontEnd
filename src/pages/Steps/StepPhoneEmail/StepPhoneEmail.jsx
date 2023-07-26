@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Phone from "./Phone/Phone";
 import Email from "./Email/Email";
 import styles from "./StepPhoneEmail.module.css";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsPhone } from "react-icons/bs";
 
 const phoneEmailMap = {
   phone: Phone,
@@ -23,7 +25,7 @@ const StepPhoneEmail = ({ onNext }) => {
             } lg:w-[60px] lg:h-[60px] w-[50px] h-[50px]`}
             onClick={() => setType("phone")}
           >
-            <img src="images/phone-white.png" alt="phone" />
+            <BsPhone size={30} />
           </button>
           {/* Email Button */}
           <button
@@ -32,7 +34,7 @@ const StepPhoneEmail = ({ onNext }) => {
             } lg:w-[60px] lg:h-[60px] w-[50px] h-[50px]`}
             onClick={() => setType("email")}
           >
-            <img src="images/mail-white.png" alt="email" />
+            <AiOutlineMail size={30} />
           </button>
         </div>
         <Component onNext={onNext} />

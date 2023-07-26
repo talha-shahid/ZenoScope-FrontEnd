@@ -15,6 +15,7 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SimulationsHome from "./pages/Simulations/SimulationsHome";
 import Users from "./pages/Users/Users";
 import SortingVisualizer from "./pages/Simulations/Algorithms/Sorting/SortingVisualizer";
+import PathFinder from "./pages/Simulations/Algorithms/PathFinder/PathFinder";
 
 function App() {
   const { loading } = useLoadingWithRefresh();
@@ -42,6 +43,10 @@ function App() {
         <Route
           path="/simulations/algorithms/sorting"
           element={<SortingVisualizer />}
+        ></Route>
+        <Route
+          path="/simulations/algorithms/pathfinder"
+          element={<PathFinder />}
         ></Route>
 
         <Route
@@ -88,7 +93,6 @@ function App() {
             </ProtectedRoute>
           }
         ></Route>
-
       </Routes>
       <Footer />
     </BrowserRouter>

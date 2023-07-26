@@ -7,7 +7,7 @@ import ExploreCard from "./secondary/ExploreCard";
 
 const exploreWorlds = [
   {
-    id: "datastructures",
+    id: "data-structures",
     imgUrl: "/DataTree.png",
     title: "Data Structures",
   },

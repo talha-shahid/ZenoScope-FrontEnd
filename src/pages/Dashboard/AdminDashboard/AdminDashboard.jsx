@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../../components/Sidebar/Sidebar";
-
 const AdminDashboard = () => {
   const [onDesktop, setOnDesktop] = useState(true);
 
@@ -32,7 +31,9 @@ const AdminDashboard = () => {
       />
 
       <div className="flex overflow-hidden">
-        {onDesktop && <Sidebar />} Admin
+        {onDesktop && <Sidebar />}
+        {/* <AdminMain /> */}
+        Admin
       </div>
     </>
   );

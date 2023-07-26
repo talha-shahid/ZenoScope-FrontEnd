@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import AdminDashboard from "./AdminDashboard/AdminDahboard";
+import AdminDashboard from "./AdminDashboard/AdminDashboard";
 import BasicDashboard from "./BasicDashboard/BasicDashboard";
 
 const Dashboard = () => {

@@ -24,7 +24,7 @@ function Algorithms() {
           abstract={
             "Sit back and watch how different pathfinding algorithms works by seeing them wander around the maze."
           }
-          link={"/simulations/algorithms"}
+          link={"/simulations/algorithms/pathfinder"}
         />
       </ul>
     </>
