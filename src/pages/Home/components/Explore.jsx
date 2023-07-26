@@ -1,16 +1,33 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "../../../styles";
-import { exploreWorlds } from "../../../constants";
 import { staggerContainer } from "../../../utils/motion";
 import { TitleText, TypingText } from "./secondary/CustomTexts";
 import ExploreCard from "./secondary/ExploreCard";
 
+const exploreWorlds = [
+  {
+    id: "datastructures",
+    imgUrl: "/DataTree.png",
+    title: "Data Structures",
+  },
+  {
+    id: "algorithms",
+    imgUrl: "/Algorithms.png",
+    title: "Algorithms",
+  },
+  {
+    id: "physics",
+    imgUrl: "/planet-05.png",
+    title: "Physics",
+  },
+];
+
 const Explore = () => {
-  const [active, setActive] = useState("data-structures");
+  const [active, setActive] = useState("algorithms");
 
   return (
-    <section className={`${styles.paddings}`} id="explore">
+    <section className={`py-5`} id="explore">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

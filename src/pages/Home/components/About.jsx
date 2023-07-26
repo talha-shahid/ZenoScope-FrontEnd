@@ -6,7 +6,7 @@ import { TypingText } from "./secondary/CustomTexts.jsx";
 
 const About = () => {
   return (
-    <section className={`${styles.paddings} relative z-10 pb-2`}>
+    <section className={`py-2 relative z-10 pb-2`}>
       <div className="gradient-02 z-0" />
       <motion.div
         variants={staggerContainer}
