@@ -1,8 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import styles from "../../../styles";
-import { staggerContainer } from "../../../utils/motion";
-import { TitleText, TypingText } from "./secondary/CustomTexts";
 import ExploreCard from "./secondary/ExploreCard";
 
 const exploreWorlds = [
@@ -28,23 +25,18 @@ const Explore = () => {
 
   return (
     <section className={`py-5`} id="explore">
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className={`${styles.innerWidth} mx-auto flex flex-col`}
-      >
-        <TypingText title="| Explore" textStyles="text-center" />
-        <TitleText
-          title={
-            <>
-              Choose the world you want <br className="md:block hidden" /> to
-              explore
-            </>
-          }
-          textStyles="text-center"
-        />
+      <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+        <p
+          className={`font-normal text-[14px] text-secondary-white text-center`}
+        >
+          | Explore
+        </p>
+        <h2
+          className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-white text-center`}
+        >
+          Choose the world you want <br className="md:block hidden" /> to
+          explore
+        </h2>
         <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {exploreWorlds.map((world, index) => (
             <ExploreCard
@@ -56,7 +48,7 @@ const Explore = () => {
             />
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

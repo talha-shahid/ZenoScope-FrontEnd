@@ -1,7 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
 import styles from "../../styles";
-import { footerVariants } from "../../utils/motion";
 import { useLocation } from "react-router-dom";
 import {
   AiFillFacebook,
@@ -17,12 +15,7 @@ const Footer = () => {
         location.pathname !== "/activate" && (
           <>
             <div className=" h-[2px] bg-white opacity-10 " />
-            <motion.footer
-              variants={footerVariants}
-              initial="hidden"
-              whileInView="show"
-              className={`${styles.paddings} py-8`}
-            >
+            <footer className={`${styles.paddings} py-8`}>
               <div className="footer-gradient" />
 
               <div
@@ -51,7 +44,7 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-            </motion.footer>
+            </footer>
           </>
         )}
     </>

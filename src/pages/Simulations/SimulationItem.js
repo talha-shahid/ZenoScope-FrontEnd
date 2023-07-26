@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "../../utils/motion";
 import { useNavigate } from "react-router-dom";
 
 const SimulationItem = ({ title, source, abstract, link }) => {
@@ -28,19 +26,11 @@ const SimulationItem = ({ title, source, abstract, link }) => {
               {title}
             </h2>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-            >
-              <motion.p
-                variants={fadeIn("up", "tween", 0.2, 0.6)}
-                className="font-thin sm:text-[20px] text-[16px] text-center text-secondary-white mt-3"
-              >
+            <div>
+              <p className="font-thin sm:text-[20px] text-[16px] text-center text-secondary-white mt-3">
                 {abstract}
-              </motion.p>
-            </motion.div>
+              </p>
+            </div>
           </div>
         )}
       </div>

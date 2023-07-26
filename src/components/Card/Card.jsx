@@ -24,6 +24,7 @@ const Card = ({ title, icon, children }) => {
         break;
       case "photo":
         setPic(<HiOutlinePhotograph size={30} />);
+        break;
     }
   }
 

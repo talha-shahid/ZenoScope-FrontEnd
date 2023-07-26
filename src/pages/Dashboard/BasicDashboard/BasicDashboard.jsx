@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { textVariant2 } from "../../../utils/motion";
-import { motion } from "framer-motion";
 import Alert from "../../../components/Alert/Alert";
 
 const BasicDashboard = () => {
@@ -53,17 +51,12 @@ const BasicDashboard = () => {
       <div className="flex overflow-hidden">
         {onDesktop && <Sidebar />}
         <div className="w-[100%] md:w-[50%] ">
-          <motion.h2
-            variants={textVariant2}
-            initial="hidden"
-            whileInView="show"
-            className={`mt-[8px] md:text-[30px] text-[20px] text-white`}
-          >
+          <h2 className={`mt-[8px] md:text-[30px] text-[20px] text-white`}>
             <div className="font-normal text-center">Welcome, </div>
             <div className="text-center md:text-[50px] text-[40px] tracking-wider font-bold">
               {user.name}
             </div>
-          </motion.h2>
+          </h2>
 
           <div className="m-10">
             <Alert />
