@@ -26,10 +26,8 @@ const SimulationItem = ({ title, source, abstract, link }) => {
               {title}
             </h2>
 
-            <div>
-              <p className="font-thin sm:text-[20px] text-[16px] text-center text-secondary-white mt-3">
-                {abstract}
-              </p>
+            <div className=" overflow-hidden font-thin text-[10px] md:text-[16px] text-center text-secondary-white mt-3 ">
+              {abstract}
             </div>
           </div>
         )}

@@ -15,7 +15,7 @@ const exploreWorlds = [
   },
   {
     id: "physics",
-    imgUrl: "/planet-05.png",
+    imgUrl: "/Physics.png",
     title: "Physics",
   },
 ];

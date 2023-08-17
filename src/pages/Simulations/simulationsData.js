@@ -24,8 +24,7 @@ export const algorithmsData = [
   },
   {
     title: "Pathfinding Algorithms",
-    abstract:
-      "Sit back and watch how different pathfinding algorithms works by seeing them wander around the maze.",
+    abstract: `Watch how different pathfinding algorithms works by seeing them wander around the maze.`,
     source: "/images/pathfinding.png",
     link: "/simulations/algorithms",
   },

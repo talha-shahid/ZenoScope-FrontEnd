@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "../../../components/Sidebar/Sidebar";
+import AdminMain from "./AdminMain";
 const AdminDashboard = () => {
-  const [onDesktop, setOnDesktop] = useState(true);
-
   toast.success("Logged-in as Admin", {
     position: "bottom-center",
     autoClose: 500,
@@ -30,11 +29,10 @@ const AdminDashboard = () => {
         closeButton={false}
       />
 
-      <div className="flex overflow-hidden">
-        {onDesktop && <Sidebar />}
-        {/* <AdminMain /> */}
-        Admin
-      </div>
+      {/* <div className="flex overflow-hidden"> */}
+      {/* {onDesktop && <Sidebar />} */}
+      <AdminMain />
+      {/* </div> */}
     </>
   );
 };

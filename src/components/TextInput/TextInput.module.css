@@ -1,10 +1,10 @@
-.input{
-    background: #2A2F36;
-    border: none;
-    padding: 5px 10px;
-    width: 200px;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 10px;
-    outline:none;
+.input {
+  background: #2a2f36;
+  border: none;
+  padding: 5px 10px;
+  width: 200px;
+  /* color: #fff; */
+  font-size: 18px;
+  border-radius: 10px;
+  outline: none;
 }

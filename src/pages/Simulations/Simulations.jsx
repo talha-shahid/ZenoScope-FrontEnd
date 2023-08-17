@@ -9,9 +9,6 @@ const Simulations = () => {
 
   async function simulationName() {
     switch (simulation) {
-      case "chemistry":
-        setName("Chemistry");
-        break;
       case "datastructures":
         setName("Data Structures");
         break;

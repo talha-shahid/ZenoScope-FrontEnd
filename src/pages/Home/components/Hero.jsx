@@ -6,7 +6,9 @@ const Hero = () => {
     <section className={`pt-4 overflow-hidden`}>
       <div className={`${styles.innerWidth} flex flex-col mx-auto`}>
         <div className="flex justify-center items-center flex-col relative z-10">
-          <h1 className={styles.heroHeading}>
+          <h1
+            className={`font-black bg-gradient-to-r from-[#26B0ED] via-[#7450FE] to-[#CA72D8] bg-clip-text text-transparent ${styles.heroHeading}`}
+          >
             <div>ZENOSCOPE</div>
           </h1>
           <div

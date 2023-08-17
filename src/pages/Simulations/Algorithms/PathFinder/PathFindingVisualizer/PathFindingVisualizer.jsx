@@ -437,58 +437,59 @@ export default class PathfindingVisualizer extends Component {
             })}
           </tbody>
         </table>
-        <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg"
-          onClick={() => this.clearGrid()}
-        >
-          Clear Grid
-        </button>
-        <button
-          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-          onClick={() => this.clearWalls()}
-        >
-          Clear Walls
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-          onClick={() => this.visualize("Dijkstra")}
-        >
-          Dijkstra's
-        </button>
-        <button
-          type="button"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-          onClick={() => this.visualize("AStar")}
-        >
-          A*
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-          onClick={() => this.visualize("BFS")}
-        >
-          Bread First Search
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-          onClick={() => this.visualize("DFS")}
-        >
-          Depth First Search
-        </button>
-        {this.state.isDesktopView ? (
+        <div>
           <button
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg ml-1"
-            onClick={() => this.toggleView()}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+            onClick={() => this.clearGrid()}
           >
-            Mobile View
+            Clear Grid
           </button>
-        ) : (
           <button
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() => this.toggleView()}
+            className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+            onClick={() => this.clearWalls()}
           >
-            Desktop View
+            Clear Walls
           </button>
-        )}
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 md:py-2 md:px-4rounded-lg m-1"
+            onClick={() => this.visualize("Dijkstra")}
+          >
+            Dijkstra's
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+            onClick={() => this.visualize("AStar")}
+          >
+            A*
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+            onClick={() => this.visualize("BFS")}
+          >
+            Bread First Search
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+            onClick={() => this.visualize("DFS")}
+          >
+            Depth First Search
+          </button>
+          {this.state.isDesktopView ? (
+            <button
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-lg m-1"
+              onClick={() => this.toggleView()}
+            >
+              Mobile View
+            </button>
+          ) : (
+            <button
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-1 px-2 md:py-2 md:px-4 rounded-full m-1"
+              onClick={() => this.toggleView()}
+            >
+              Desktop View
+            </button>
+          )}
+        </div>
       </div>
     );
   }

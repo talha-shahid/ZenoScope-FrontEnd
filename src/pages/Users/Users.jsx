@@ -5,6 +5,7 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import People from "./People";
 import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 import Pagination from "../../components/Pagination/Pagination";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Users = () => {
   const { user } = useSelector((state) => state.auth);
@@ -37,7 +38,8 @@ const Users = () => {
       <div className="flex justify-between flex-col md:flex-row">
         <BreadCrumbs name={"Users"} />
         <div className="bg-gray-800 flex items-center px-[10px] md:w-[21.8%] w-[80%] rounded-[20px] mx-[25px] outline outline-1 outline-gray-700 mt-[8px] md:mt-[0px]">
-          <img src="/images/search-icon.png" alt="search" />
+          {/* <img src="/images/search-icon.png" alt="search" /> */}
+          <AiOutlineSearch size={20} />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}

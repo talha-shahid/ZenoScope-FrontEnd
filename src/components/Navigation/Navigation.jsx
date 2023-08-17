@@ -27,18 +27,18 @@ const Navigation = () => {
   }
 
   return (
-    <nav className={`${styles.xPaddings} py-3 relative`}>
+    <nav className={`${styles.xPaddings} py-3 relative `}>
       <div className="absolute w-[50%] inset-0 gradient-01" />
 
       <div className={`${styles.innerWidth} flex flex-row justify-between`}>
-        <div className="flex items-center justify-center z-50 cursor-pointer">
+        <div className="flex items-center justify-center z-40 cursor-pointer">
           <img
             src="/logo.png"
             alt="logo"
             className="mt-[2px] w-[24px] h-[24px] object-contain "
           />
           <Link to="/" className="">
-            <h2 className="font-extrabold text-[24px] leading-[30px] text-white">
+            <h2 className="font-extrabold text-[24px] leading-[30px] text-white/70">
               ZENOSCOPE
             </h2>
           </Link>

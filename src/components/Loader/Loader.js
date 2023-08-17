@@ -7,7 +7,7 @@ const Loader = ({ message }) => {
     <div className="cardWrapper">
       <Card>
         <img
-          src="/logo3.png "
+          src="/logo.png "
           alt="loader"
           height="100"
           width="100"
